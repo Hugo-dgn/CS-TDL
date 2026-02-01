@@ -17,7 +17,6 @@ class OneHiddenNN(nn.Module):
 class TwoHiddenNN(nn.Module):
     def __init__(self, n, params_count, output_size=1):
         super().__init__()
-        # approximate equal hidden sizes
         h = int((- (n + 2 + output_size) + math.sqrt((n + 2 + output_size)**2 + 4*(params_count - output_size))) // 2)
         h = max(1, h)
         self.net = nn.Sequential(
